@@ -1,0 +1,19 @@
+{% extends 'base_enrollee.html' %}
+{% load i18n %}
+    {% block title %}Faculty list{% endblock %}
+     <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+{% block content %}    <ul class="list-group">
+        <li class="list-group-item">
+            <h3 class="text-center"> {% trans "List of faculties " %} </h3>
+        </li>
+    </ul>
+    {% for faculty in faculties %}
+        <ul class="list-group">
+            <li class="list-group-item active">{{ faculty.name}}</li>
+            <li class="list-group-item"> {% trans  "Faculty limit :"%} {{ faculty.faculty_limit }}</li>
+            <li class="list-group-item"><a href="{% url 'enroll_form' faculty.name faculty.id %}">{% trans "Enroll"%} {{faculty.name}} {% trans "faculty" %}</a></li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
