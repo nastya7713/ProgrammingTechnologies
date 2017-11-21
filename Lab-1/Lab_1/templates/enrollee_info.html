@@ -1,0 +1,54 @@
+    {% extends 'base_enrollee.html'%}
+    {% load i18n %}
+    {% block title %}Enrolle info{% endblock %}
+
+    {% block content %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h3 class="text-center"> {% trans "Personal info" %} </h3>
+        </li>
+    </ul>{% if messages %}
+                            <ul class="messages list-group">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }} list-group-item list-group-item-danger"{% endif %}>
+                                    {{ message }}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+        <ul class="list-group">
+            <li class="list-group-item "> {% trans "Your login :"%}  {{ enrollee.username}}</li>
+            <li class="list-group-item">
+                <form action="{% url 'change_login' %}" method="post">{% csrf_token %}
+                    <label for="id_login">{% trans "Change login :"%}  </label>
+                    <input id="id_login" name="login" class="input-sm">
+                    <button  class="btn btn-primary">{% trans "Change login"%}</button>
+                </form>
+            </li>
+            <li class="list-group-item"> {% trans "First name:" %}  {{ enrollee.first_name }}</li>
+            <li class="list-group-item">
+                <form action="{% url 'change_first_name' %}" method="post">{% csrf_token %}
+                <label for="id_first_name">{% trans "Change first name :" %}   </label>
+                <input id="id_first_name" name="first_name" class="input-sm">
+                <button  class="btn btn-primary">{% trans "Change first name" %}</button>
+                </form>
+            </li>
+            <li class="list-group-item">{% trans "Last name:" %} {{enrollee.last_name}}</li>
+            <li class="list-group-item">
+                <form action="{% url 'change_last_name' %}" method="post">{% csrf_token %}
+                <label for="id_last_name">{% trans "Change last name : " %} </label>
+                <input id="id_last_name" name="last_name" class="input-sm" >
+                <button  class="btn btn-primary">{% trans "Change last name: " %}</button>
+                </form>
+            </li>
+            <li class="list-group-item"> email: {{ enrollee.email }}</li>
+            <li class="list-group-item">
+                <form action="{% url 'change_email' %}" method="post">{% csrf_token %}
+                <label for="id_email">{% trans "Change email :" %}  </label>
+                <input id="id_email" name="email" class="input-sm" type="email">
+                <button  class="btn btn-primary">{% trans "Change email" %}</button>
+                </form>
+            </li>
+            <a href="{% url 'change_password' %}" class="list-group-item active">{% trans "Change password" %}</a>
+        </ul>
+    {% endblock %}

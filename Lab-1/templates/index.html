@@ -1,0 +1,75 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet"> -->
+
+    <!-- Custom styles -->
+    <!--<link rel="stylesheet" href="'style.css">-->
+
+
+</head>
+<body>
+
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="text-center col-lg-8 col-lg-offset-2">
+                    <h3 class="title">{% trans "Welcome to the university of unicorns admission system"%}</h3>
+                    <h4>{% trans "It is required to log in" %}</h4>
+                    <div>   <form class="form-horizontal" action="" method="post"> {% csrf_token %}
+                           <label class="control-label col-xs-2" >{% trans "Name:" %} </label>
+                            <label class="col-xs-10">
+                                <input name="name" class="form-control " required>
+                            </label>
+                            <label class="control-label col-xs-2">{% trans "Password:"%} </label>
+                              <label class="col-xs-10">
+                                  <input name="password" type="password" class="form-control " required>
+                              </label>
+                        <div class="form-actions">
+                        <button  class="btn btn-primary btn-sm">{% trans "Submit"%}</button>
+                        </div>
+                    </form>
+                       <a href="http://127.0.0.1:8000/registration/">{% trans "Registration"%}</a>
+                    </div>
+                    <div> {{info}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <ul class="text-center list-group">  <li class="list-group-item"><form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+        <label>
+            <select class="select" name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+        </select>
+        </label>
+        <input type="submit"  class="btn btn-primary" value= "Change" />
+    </form>
+      </li>
+      </ul>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base_enrollee.html' %}
+{% load i18n %}
+{% block title %}Admission list{% endblock %}
+{% block content %}
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="text-center col-lg-6 col-lg-offset-2">
+                <h2 class="text-center">{{ faculty_name }} {% trans "admission list" %}</h2>
+                    <table class="table table-bordered">
+                         <thead>
+                              <tr>
+                                <th>{% trans 'First name'%} </th>
+                                <th>{% trans 'Last name'%}</th>
+                                <th>{% trans 'Grade'%}</th>
+                              </tr>
+                        </thead>
+                    {% for enr in enrollees %}
+                         <tbody>
+                              <tr>
+                                <td>{{ enr.enrollee.user.first_name }}</td>
+                                <td>{{ enr.enrollee.user.last_name }}</td>
+                                  <td> {{ enr.average_grade }}</td>
+                              </tr>
+                        </tbody>
+                    {% endfor %}
+                      </table>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

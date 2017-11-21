@@ -1,0 +1,30 @@
+{% extends 'base_enrollee.html' %}
+{% load i18n %}
+    {% block title %}Enrolled faculties{% endblock %}
+        {% block content %}
+                <ul class="list-group">
+                    <li class="list-group-item"> {% trans "Faculties you have already enrolled" %}</li>
+                </ul>
+            {% if faculty_enrollee %}
+       {% for fac in faculty_enrollee %}
+        <ul class="list-group">
+            <li class="list-group-item active">{{ fac.faculty.name }}</li>
+            <li class="list-group-item"> {% trans "Faculty limit :"%} {{ fac.faculty.faculty_limit }}</li>
+            {% if fac.status == 1 %}
+                <li class="list-group-item list-group-item-info">{% trans "Your state is wait" %}</li>
+            {% else%}
+                {% if  fac.status == 2 %}
+                <li class="list-group-item list-group-item-danger">{% trans "Your state is denied" %}</li>
+                {% else %}
+                <li class="list-group-item list-group-item-success">{% trans "Your state is success" %}</li>
+                {% endif %}
+                     <li class="list-group-item"> <a href="{% url 'admission_list' fac.faculty.name fac.faculty.id %}">{% trans "Show admission list" %}</a></li>
+            {% endif %}
+        </ul>
+    {% endfor %}
+            {% else %}
+                  <ul class="list-group">
+                    <li class="list-group-item">{% trans "No faculties available" %}</li>
+                </ul>
+            {% endif %}
+{% endblock %}
