@@ -51,8 +51,7 @@ class CardsSAXParser < Nokogiri::XML::SAX::Document
   end
 
   def end_document
-    puts "\nParsed by SAX"
-    puts @papers
+    puts "\n Sax:"
   end
 
   def start_document
