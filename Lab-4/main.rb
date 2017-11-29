@@ -16,21 +16,19 @@ if error_list.length > 0
   end
 else
   puts('XML is valid')
+  #parses using DOMParser and shows result
+  puts("Parsed by DOM:")
+  dom_parser = CardsDOMParser.new(doc)
+  old_cards = dom_parser.parse
+  puts(old_cards)
+
+  #parses using SAXParser and shows result
+  sax_parser = CardsSAXParser.new
+  parser = XML::SAX::Parser.new(sax_parser)
+  parser.parse_file('xml/OldCards.xml')
+
+  #sorts card list
+  puts("Sorted:")
+  old_cards.sort_by(&:year)
+  puts(old_cards.reverse)
 end
-
-#parses using DOMParser and shows result
-puts("Parsed by DOM:")
-dom_parser = CardsDOMParser.new(doc)
-old_cards = dom_parser.parse
-puts(old_cards)
-
-#parses using SAXParser and shows result
-sax_parser = CardsSAXParser.new
-parser = XML::SAX::Parser.new(sax_parser)
-parser.parse_file('xml/OldCards.xml')
-puts(old_cards)
-
-#sorts card list
-puts("Sorted:")
-old_cards.sort_by(&:year)
-puts(old_cards.reverse)
