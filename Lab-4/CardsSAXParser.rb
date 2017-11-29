@@ -52,6 +52,7 @@ class CardsSAXParser < Nokogiri::XML::SAX::Document
 
   def end_document
     puts "\n Sax:"
+    puts @old_cards
   end
 
   def start_document
