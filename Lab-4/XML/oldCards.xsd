@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="oldCards">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="oldCard" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="name" type="xsd:string" maxOccurs="1" />
+                            <xsd:element name="topic" type="xsd:string" maxOccurs="1" />
+                            <xsd:element name="type" type="typeType" maxOccurs="1" />
+                            <xsd:element name="country" type="xsd:string" maxOccurs="1" />
+                            <xsd:element name="year" type="xsd:gYear" maxOccurs="1" />
+                            <xsd:element name="value" type="valueType" maxOccurs="1" />
+                            <xsd:element name="author" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                        <xsd:attribute name="id" type="xsd:string" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+
+        <xsd:unique name="unique-id">
+            <xsd:selector xpath="oldCard"/>
+            <xsd:field xpath="@id"/>
+        </xsd:unique>
+    </xsd:element>
+
+    <xsd:complexType name="typeType">
+        <xsd:sequence>
+            <xsd:element name="context" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="process" type="processType" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="processType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="send"/>
+            <xsd:enumeration value="unsent"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="valueType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="collection"/>
+            <xsd:enumeration value="ordinary"/>
+            <xsd:enumeration value="advertisement"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
+
+
+
+
+

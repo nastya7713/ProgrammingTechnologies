@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<oldCards>
+    <oldCard id = "1">
+        <name>Paris</name>
+        <topic>nature</topic>
+        <type>
+            <context>ordinary</context>
+            <process>send</process>
+        </type>
+        <country>Russia</country>
+        <year>1956</year>
+        <value>collection</value>
+        <author>Thomas Rid</author>
+        <author>Mark Tom</author>
+    </oldCard>
+    <oldCard id = "2" >
+        <name>Football</name>
+        <topic>sport</topic>
+        <type>
+            <context>congratulation</context>
+            <process>unsent</process>
+        </type>
+        <country>Brazil</country>
+        <year>1976</year>
+        <value>collection</value>
+        <author>unknown</author>
+    </oldCard>
+    <oldCard id = "3" >
+        <name>Math</name>
+        <topic>algebra</topic>
+        <type>
+            <context>collection</context>
+            <process>send</process>
+        </type>
+        <country>France</country>
+        <year>1776</year>
+        <value>collection</value>
+        <author>Mui</author>
+    </oldCard>
+    <oldCard id = "4" >
+        <name>Cordo</name>
+        <topic>type</topic>
+        <type>
+            <context>congratulation</context>
+            <process>unsent</process>
+        </type>
+        <country>Romania</country>
+        <year>1676</year>
+        <value>collection</value>
+        <author>unknown</author>
+    </oldCard>
+    <oldCard id = "5" >
+        <name>Tor</name>
+        <topic>greek</topic>
+        <type>
+            <context>myth</context>
+            <process>unsent</process>
+        </type>
+        <country>Greece</country>
+        <year>0976</year>
+        <value>collection</value>
+        <author>unknown</author>
+    </oldCard>
+</oldCards>
