@@ -6,21 +6,21 @@ Enrollee has an opportunity to register for available faculties, filling in all 
 check current register list created by admin, change personal info.
 Project implements MVC structure:
 Models:
-      * created using ActiveRecord database schema could be found in Lab-3\db\schema.rb
+      *created using ActiveRecord database schema could be found in Lab-3/db/schema.rb
 Views:
-      * admin/*
-      * devise/*
-      * enrollee/*
-      * faculties/*
-      * faculty_enrollees/*
-      * subjects/*
-      * users/*
+      *admin/*
+      *devise/*
+      *enrollee/*
+      *faculties/*
+      *faculty_enrollees/*
+      *subjects/*
+      *users/*
 Controllers:
-      * admin_controller.rb
-      * application_controller.rb
-      * enrollee_controller.rb
-      * faculties.controller.rb
-      * faculty_enrollees_controller.rb
-      * registrations_controller.rb
-      * subjects_controller.rb
-      * users_controller.rb
+      *admin_controller.rb
+      *application_controller.rb
+      *enrollee_controller.rb
+      *faculties.controller.rb
+      *faculty_enrollees_controller.rb
+      *registrations_controller.rb
+      *subjects_controller.rb
+      *users_controller.rb
