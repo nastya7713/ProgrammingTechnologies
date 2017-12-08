@@ -1,0 +1,33 @@
+
+<h1>Users</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Email</td>
+      <td>First name</td>
+      <td>Last name</td>
+      <td class="text-center" colspan="3"> Actions</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td> <%= user.email %> </td>
+        <td> <%= user.first_name %> </td>
+        <td> <%= user.last_name %> </td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="text-center"><%= link_to 'New User', new_user_registration_path %></div>
+<ul class="list-group">
+  <li class="list-group-item text-center"><%= link_to 'Back', admin_index_path %></li>
+</ul>

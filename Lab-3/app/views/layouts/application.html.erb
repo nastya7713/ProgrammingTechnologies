@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab3</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+    <%= yield %>
+    <lu class="list-group text-center">
+      <li class="list-group-item"><%= link_to 'EN', locale: :en %> | <%= link_to 'UK', locale: :uk %></li>
+    </lu>
+  </body>
+</html>

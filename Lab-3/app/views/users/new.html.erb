@@ -1,0 +1,12 @@
+<h1 class="text-center">New User</h1>
+<% if notice %>
+    <ul class="list-group"><li class="notice list-group-item text-center list-group-item-success"><%= notice %></li></ul>
+<% end %>
+<% if alert %>
+    <ul class="list-group"><li class="alert list-group-item list-group-item-danger"><%= alert %></li></ul>
+<% end %>
+<div class="text-center"><%= form_for User.new, url: create_user_path do |f| %>
+      <%= render 'form', user: @user %>
+      <% end %>
+<%= link_to 'Back', users_path %>
+</div>

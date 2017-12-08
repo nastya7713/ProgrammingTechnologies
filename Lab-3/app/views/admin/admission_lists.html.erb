@@ -1,0 +1,21 @@
+<h1><%= t(".faculties") %></h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th> <%= t(".faculty")%> </th>
+    <th colspan="2"> <%= t(".action") %> </th>
+  </tr>
+  </thead>
+
+  <tbody class="table">
+  <% @faculties.each do |faculty| %>
+      <tr>
+        <td> <%= faculty.name %> </td>
+        <td class="text-center"> <%= link_to t('.show_list'), admin_show_admission_list_path(:faculty_id => faculty.id) %> </td>
+        <td class="text-center"> <%= link_to t('.create_list'), admin_create_admission_list_page_path(:faculty_id => faculty.id) %> </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<div class="text-center"><%= link_to t(".admin_list"), admin_index_path%></div>

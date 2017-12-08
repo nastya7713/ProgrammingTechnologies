@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand"><%= t("common.university") %></div>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to t("common.home") , enrollee_index_path %></li>
+      <li><%= link_to t("common.sign_out") , destroy_user_session_path , method: :delete  %></li>
+    </ul>
+  </div>
+</nav>
+<div class="text-center">
+  <% if @faculty_enrollees.empty?%>
+      <h3><%= t('.no_admission')%></h3>
+  <% else %>
+      <h3><%= t(".title") %> </h3>
+      <h4><%= t(".limit") %>  <%= @limit%> </h4>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th> № </th>
+          <th><%= t(".full_name")%></th>
+          <th><%= t(".average_grade")%></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @faculty_enrollees.each_with_index  do |enrollee, index|%>
+            <tr>
+              <td> <%= index + 1%> </td>
+              <td> <%= enrollee.user.first_name %> <%= enrollee.user.last_name%> </td>
+              <td> <%= enrollee.grade %> </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <br>
+  <% end%>
+</div>
+<ul class="list-group">
+  <li class="list-group-item text-center"><%= link_to t(".back"), enrollee_my_faculties_path %></li>
+</ul>
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t("common.name") %> :</strong>
+  <%= @subject.name %>
+</p>
+
+<%= link_to t('common.edit'), edit_subject_path(@subject) %> |
+<%= link_to t('admin.show_admission_list.back'), subjects_path %>
