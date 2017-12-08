@@ -1,0 +1,6 @@
+<h1><%= t(".edit_subject") %></h1>
+
+<%= render 'form', subject: @subject %>
+
+<%= link_to t('common.show'), @subject %> |
+<%= link_to t('admin.users.back'), subjects_path %>

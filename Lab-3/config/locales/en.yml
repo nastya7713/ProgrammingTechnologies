@@ -1,0 +1,180 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+en:
+  admin:
+    add_faculty_subjects:
+      admin_list: "Admin list"
+      choose_subject: "Choose subject to add:"
+      no_subject: "No subject to add"
+    admission_lists:
+      action: Action
+      admin_list: "Admin list"
+      create_list: "Create list"
+      faculties: Faculties
+      faculty: Faculty
+      show_list: "Show list"
+    create_admission_list_page:
+      average: "Average grade"
+      back: Back
+      choose: Choose
+      choose_enrollees: "Choose enrollees to add: "
+      form_list: "Form list"
+      full_name: "Full name"
+      limit: "Faculty limit is"
+      no_enrollees: "No enrollees to add"
+    faculty_subjects:
+      action: Action
+      add: add
+      admin_list: "Admin list"
+      delete: delete
+      faculty: Faculty
+      faculty_subjects: "Faculty subjects"
+      subjects: Subjects
+    index:
+      show_faculties: "Show faculties"
+      show_faculties_register_list: "Show faculties register list"
+      show_faculty_enrollees: "Show faculty enrollees"
+      show_faculty_subjects: "Show faculty subjects"
+      show_subjects: "Show subjects"
+      show_users: "Show users"
+      welcome: "Welcome admin"
+    show_admission_list:
+      average: "Average grade"
+      back: "Back to list"
+      faculty_admission_list: "Faculty admission list:"
+      full_name: "Full name"
+      limit: "Faculty limit is"
+      no_admission_list: "No admission list"
+    users:
+      back: Back
+      edit: Edit
+      email: Email
+      first_name: "First name"
+      last_name: "Last name"
+      users: Users
+  common:
+    home: Home
+    sign_out: "Sign out"
+    university: "University of unicorns"
+    show: "Show"
+    edit: "Edit"
+    destroy:  "Destroy"
+    name: "Name"
+  enrollee:
+    admission_page:
+      average_grade: "Average grade"
+      back: "Back to list"
+      full_name: "Full name"
+      limit: "Faculty limit is "
+      no_admission: "No admission list"
+      title: "Faculty admission list:"
+    enrollment_page:
+      back_faculty_list: "Back to faculty list"
+      check: "You successfully enrolled for the faculty"
+      enroll: "You can check your results on my faculties page."
+      enroll_btn: Enroll
+      enter_grade: "Enter your grade :"
+      enter_your: "Enter your "
+      grade: "grade :"
+      limit: "faculty limit"
+      list: "List of faculties"
+      my_faculty_list: "Go to my faculty list"
+      no_faculties: "No faculties"
+      success: Success
+      title_subjects: "Enter subjects grade:"
+    faculty_list:
+      enroll: "Enroll faculty"
+      limit: "Faculty limit :"
+      list: "List of faculties"
+      no_faculties: "No faculties available"
+    index:
+      choose_faculties: "Choose faculties"
+      show_faculties: "Show my faculties"
+      show_info: "Show my info"
+      welcome: "Welcome enrollee"
+    my_faculties:
+      check_register: "Check faculty register"
+      enrolled_list: "List of enrolled faculties"
+      limit: "Faculty limit:"
+      no_faculties: "No faculties available"
+  user:
+    back: "Back"
+    blank: "(leave blank if you don't want to change it)"
+    confirm: "(we need your current password to confirm your changes)"
+    edit: "Edit"
+    pass: "characters minimum"
+    update: "Update"
+
+  faculty_enrollees:
+              add:
+                      no_user: "No user to add"
+                      choose_user: "Choose user to add:"
+                      back: "Back to list"
+
+              index:
+                      faculty: "Faculty"
+                      enrollee: "Enrollee"
+                      action: "Action"
+                      add: "Add"
+                      delete: "Delete"
+                      back: "Admin list"
+
+  subjects:
+            edit:
+                  edit_subject: "Editing subject"
+
+            new:
+                  new_subject: "New Subject"
+  faculties:
+            edit:
+                    edit: "Editing Faculty"
+            index:
+                    new_faculty: "New faculty"
+
+  activerecord:
+      attributes:
+        user:
+          current_password: "Current password"
+          email: Email
+          first_name: "First name"
+          last_name: "Last name"
+          password: Password
+          password_confirmation: "Confirm password"
+
+        faculty:
+                              limit: "Limit"
+                              name: "Name"
+
+        subject:
+                              name: "Name"
+
+
+

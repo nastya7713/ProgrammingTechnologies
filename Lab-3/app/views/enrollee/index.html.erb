@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand"><%= t("common.university") %></div>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to t("common.home") , enrollee_index_path %></li>
+      <li><%= link_to t("common.sign_out") , destroy_user_session_path , method: :delete  %></li>
+    </ul>
+  </div>
+</nav>
+<% if notice %>
+    <ul class="list-group"><li class="notice list-group-item text-center list-group-item-success"><%= notice %></li></ul>
+<% end %>
+<% if alert %>
+    <ul class="list-group"><li class="alert list-group-item list-group-item-danger"><%= alert %></li></ul>
+<% end %>
+<h2 class="text-center"><%= t (".welcome") %></h2>
+<div class="list-group">
+  <div class="list-group-item text-center"><%= link_to t(".choose_faculties"), enrollee_faculty_list_path %></div>
+  <div class="list-group-item text-center"> <%= link_to t(".show_info"), edit_user_registration_path %></div>
+  <div class="list-group-item text-center"><%= link_to t(".show_faculties"), enrollee_my_faculties_path %></div>
+</div>
+
+

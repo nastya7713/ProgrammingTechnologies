@@ -1,0 +1,165 @@
+uk:
+  common:
+                        home: "Додому"
+                        sign_out: "Вийти"
+                        university: "Універсітет єдинорогів"
+                        show: "Показати"
+                        edit: "Відредагувати"
+                        destroy:  "Знищити"
+                        name: "Ім'я"
+
+  user:
+                  edit: "Відредагувати користувача"
+                  update: "Оновити"
+                  confirm: "(для підтвердження необхідний пароль)"
+                  blank: "(залишіть поле порожнім, якщо не бажаєте його змінювати)"
+                  back: "Повернутися"
+                  pass: "мінімальна довжина паролю"
+
+  enrollee:
+        index:
+                welcome: "Вітаю абітурієнт!"
+                show_info: "Мої дані"
+                show_faculties: "Показати мої факультети"
+                choose_faculties: "Обрати факультет"
+                home: "Додому"
+                sign_out: "Вийти"
+                university: "Універсітет єдинорогів"
+
+        my_faculties:
+                        enrolled_list: "Факультети, на які було подано заявки"
+                        limit: "Обмеження місць:"
+                        check_register: "Перевірити списки"
+                        no_faculties: "Немає факультетів"
+
+        admission_page:
+                              no_admission:  "Немає списку"
+                              title: "Список студентів факультету:"
+                              limit: "Обмеження місць на факультеті"
+                              full_name: "Повне ім'я"
+                              average_grade: "Середній бал"
+                              back: "Назад до моїх факультетів"
+
+        faculty_list:
+                                    list: "Список факультетів"
+                                    limit: "Обмеження місць на факультеті"
+                                    no_faculties: "Немає факультетів"
+                                    enroll: "Зареєструватися на факультет"
+
+        enrollment_page:
+                                  list: "Список факультетів"
+                                  success: "Успіх"
+                                  check: "Ви успішно зареєстровані на факультет"
+                                  enroll: "Ви можете переглянути свої факультети на сторінці мої факультети."
+                                  title_subjects: "Введіть оцінку з предмету:"
+                                  enter_grade: "Введітть оцінку атестату:"
+                                  enroll_btn: "Відправити заявку"
+                                  limit: "Обмеження місць на факультеті"
+                                  no_faculties: "Немає факультетів"
+                                  enter_your: "Введіть свою"
+                                  grade: "оцінку:"
+                                  my_faculty_list: "Повернутися до розділу мої факультети"
+                                  back_faculty_list: "Повернутися до вибору факультету"
+
+  admin:
+
+              index:
+                                                show_faculties: "Показати факультети"
+                                                show_subjects: "Показати предмети"
+                                                show_users: "Показати користувачів"
+                                                show_faculty_subjects: "Показати предмети на факультеті"
+                                                show_faculty_enrollees: "Показати список студентів, що подали заявки на факультети"
+                                                show_faculties_register_list: "Показати список студентів, що зареєстровані на факультет"
+                                                welcome: "Вітаю адмін"
+
+              show_admission_list:
+                                                no_admission_list: "Немає списку студентів"
+                                                faculty_admission_list: "Список студентів зарахованих на факультет:"
+                                                limit: "Обмеження місць на факультеті"
+                                                full_name: "Повне ім'я"
+                                                average: "Середній бал"
+                                                back: "до списку адміна"
+
+              users:
+                                              users: "Користувачі"
+                                              first_name: "Ім'я"
+                                              last_name: "Прізвище"
+                                              email: "Електронна пошта"
+                                              edit: "Відредагувати"
+                                              back: "Назад"
+
+              faculty_subjects:
+                                              faculty_subjects: "Предмети на факультеті"
+                                              action: "Дія"
+                                              subjects: "Предмети"
+                                              faculty: "Факультет"
+                                              add: "додати"
+                                              delete: "видалити"
+                                              admin_list: "Список адміна"
+
+              create_admission_list_page:
+                                            no_enrollees: "Немає заявок"
+                                            choose_enrollees: "Оберіть студента для того, аби додати: "
+                                            limit: "Обмеження місць на факультеті"
+                                            average: "Середній бал"
+                                            choose: "Вибір"
+                                            full_name: "Повне ім'я"
+                                            form_list: "Сформувати список"
+                                            back: "Назад"
+
+              admission_lists:
+                                    faculties: "Факультети"
+                                    faculty: "Факультет"
+                                    action: "Дія"
+                                    show_list: "Показати список"
+                                    create_list: "Створити список"
+                                    admin_list: "Список адміна"
+
+              add_faculty_subjects:
+                                       no_subject: "Немає предметів, що можна додати"
+                                       choose_subject: "Оберіть предмет аби додати:"
+                                       admin_list: "Список адміна"
+
+  faculty_enrollees:
+                                add:
+                                    choose_user: "Обрати абітурієнта аби додати:"
+                                    back: "Назад до списку адміна"
+                                    no_user: "Немає абітурієнтів, що можливо додати"
+
+                                index:
+                                                      faculty: "Факультет"
+                                                      enrollee: "Абітурієнт"
+                                                      action: "Дія"
+                                                      add: "Додати"
+                                                      delete: "Видалити"
+                                                      back: "Список адміна"
+
+  subjects:
+              edit:
+                    edit_subject: "Відредагувати предмет"
+              new:
+                    new_subject: "Новий предмет"
+
+  faculties:
+              edit:
+                      edit: "Відредагувати факультет"
+
+              index:
+                      new_faculty: "Новий факультет"
+
+  activerecord:
+              attributes:
+                      user:
+                            first_name: "Ім'я"
+                            last_name: "Прізвище"
+                            password: "Пароль"
+                            email: "Електронна пошта"
+                            password_confirmation: "Підтвердження пароля"
+                            current_password: "Поточний пароль"
+                      faculty:
+                                limit: "Обмеження місць на факультеті"
+                                name: "Ім'я"
+                      subject:
+                                name: "Ім'я"
+
+

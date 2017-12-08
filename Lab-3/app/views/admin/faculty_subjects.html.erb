@@ -1,0 +1,29 @@
+<h1><%= t(".faculty_subjects")%></h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th> <%= t(".faculty")%> </th>
+    <th> <%= t(".subjects")%></th>
+    <th> <%= t(".action")%> </th>
+  </tr>
+  </thead>
+
+  <tbody class="table">
+  <% @faculties.each do |faculty| %>
+  <tr>
+    <td> <%= faculty.name %> </td>
+    <td>  </td>
+    <td class="text-center"> <%= link_to t(".add"), admin_add_faculty_subjects_path(:faculty_id => faculty.id) %> </td>
+  </tr>
+  <% faculty.subjects.each do |subject| %>
+      <tr>
+        <td></td>
+        <td class="text-center" > <%= subject.name %> </td>
+        <td class="text-center"> <%= link_to t(".delete"), admin_delete_faculty_subjects_path(:subject_id => subject.id,:faculty_id => faculty.id ) %> </td>
+      </tr>
+  <% end %>
+  <% end %>
+  </tbody>
+</table>
+<div class="text-center"><%= link_to t(".admin_list"), admin_index_path%></div>

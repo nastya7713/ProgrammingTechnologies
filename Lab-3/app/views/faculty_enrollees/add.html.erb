@@ -1,0 +1,22 @@
+<div class="text-center">
+  <% if @users.empty?%>
+      <h3><%=t(".no_user")%> </h3>
+  <% else %>
+      <h3><%= t(".choose_user")%> </h3>
+      <%= form_tag(:action => 'add_enrollee') do %>
+          <%= select_tag 'user_id', options_for_select(@users.collect{ |u| [u.first_name + " " +u.last_name, u.last_name, u.id] })%><br>
+          <%= number_field_tag :grade %><br>
+          <%= hidden_field_tag :faculty_id, params[:faculty_id] %><br>
+          <input class="button-ok" value="OK" type="submit"/>
+      <% end %>
+      <br>
+  <% end%>
+</div>
+<ul class="list-group">
+  <li class="list-group-item text-center"><%= link_to t(".back"), admin_index_path %></li>
+</ul>
+
+
+
+
+

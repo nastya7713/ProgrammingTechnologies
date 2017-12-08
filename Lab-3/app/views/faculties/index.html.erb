@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t("admin.admission_lists.faculties")%></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> <%= t('common.name')%> </th>
+      <th> <%= t('enrollee.my_faculties.limit')%> </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faculties.each do |faculty| %>
+      <tr>
+        <td> <%= faculty.name %> </td>
+        <td> <%= faculty.limit %> </td>
+        <td> <%= link_to t('common.show'), faculty %> </td>
+        <td> <%= link_to t('common.edit'), edit_faculty_path(faculty) %> </td>
+        <td> <%= link_to t('common.destroy'), faculty, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<ul class="list-group">
+  <li class="list-group-item text-center"><%= link_to t('faculties.index.new_faculty'), new_faculty_path %></li>
+  <li class="list-group-item text-center"><%= link_to t('admin.users.back'), admin_index_path %></li>
+</ul>
+

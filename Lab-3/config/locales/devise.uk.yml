@@ -1,0 +1,16 @@
+uk:
+  devise:
+    failure:
+      already_authenticated: "Вже зареєстровані"
+      invalid: "Неправильні %{authentication_keys} or пароль."
+      not_found_in_database: "Неправильні %{authentication_keys} or пароль."
+      unauthenticated: "Необхідно бути авторизованим аби ввійти на сайт."
+    registrations:
+      destroyed: "Акаунт видалений"
+      signed_up: "Вітаємо! Ви успішно зареєстровані."
+      updated: "Ваш акаунт був успішно оновлений."
+    sessions:
+      signed_in: "Ви успішно ввійшли."
+      signed_out: "Вийшли."
+      already_signed_out: "Вийшли."
+

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('common.name')%> :</strong>
+  <%= @faculty.name %>
+</p>
+
+<p>
+  <strong><%= t('enrollee.my_faculties.limit')%> :</strong>
+  <%= @faculty.limit %>
+</p>
+
+
+<%= link_to t('common.edit'), edit_faculty_path(@faculty) %> |
+<%= link_to t('admin.users.back'), faculties_path %>

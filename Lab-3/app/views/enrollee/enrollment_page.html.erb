@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand"><%= t("common.university") %></div>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to t("common.home") , enrollee_index_path %></li>
+      <li><%= link_to t("common.sign_out") , destroy_user_session_path , method: :delete  %></li>
+    </ul>
+  </div>
+</nav>
+          <div class="text-center">
+          <% if @success %>
+              <h1> <%= t(".success")%>  </h1>
+              <h3> <%= t(".enroll") %></h3>
+              <h4> <%= t(".check") %></h4>
+              <div class="list-group">  </div>
+          <% else %>
+              <h3 class="title"><%= t(".title_subjects")%></h3>
+              <% if @faculty.subjects %>
+                  <%= form_tag(:action => 'enroll_faculty') do %>
+                      <% @faculty.subjects.each do |subject| %>
+                            <label for="subject_grade"> <%= t(".enter_your") %> <%= subject.name%> <%= t(".grade") %> </label><br>
+                            <%= number_field_tag subject.name%><br>
+                      <% end %>
+                        <%= hidden_field_tag :faculty_id, params[:faculty_id]%>
+                        <label for="grade" ><%= t(".enter_grade")%> </label><br>
+                        <%= number_field_tag "grade" %> <br>
+                      <br><div class="form-actions"><button  class="btn btn-primary"><%= t(".enroll")%></button></div>
+                  <% end %>
+              <% end %>
+          <% end %>
+          <br>
+          <div>
+            <%= link_to t(".back_faculty_list"), enrollee_faculty_list_path %>
+          </div>
+            <div>
+              <%= link_to t(".my_faculty_list"), enrollee_my_faculties_path %>
+            </div>
+          </div>

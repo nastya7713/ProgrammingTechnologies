@@ -1,0 +1,21 @@
+<div class="text-center">
+  <% if @subs.empty?%>
+      <h3><%= t(".no_subject")%> </h3>
+  <% else %>
+  <h3><%= t(".choose_subject")%> </h3>
+  <%= form_tag(:action => 'add_faculty_subject') do %>
+  <%= select_tag 'subject_id', options_for_select(@subs.collect{ |u| [u.name, u.id] }) %>
+    <%= hidden_field_tag :faculty_id, params[:faculty_id] %>
+    <input class="button-ok" value="OK" type="submit"/>
+      <% end %>
+      <br>
+  <% end %>
+</div>
+  <ul class="list-group">
+    <li class="list-group-item text-center"><%= link_to t('.admin_list'), admin_index_path %></li>
+  </ul>
+
+
+
+
+

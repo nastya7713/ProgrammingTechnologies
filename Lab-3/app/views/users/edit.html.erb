@@ -1,0 +1,12 @@
+<h1 class="text-center">Editing User</h1>
+<% if notice %>
+    <ul class="list-group"><li class="notice list-group-item text-center list-group-item-success"><%= notice %></li></ul>
+<% end %>
+<% if alert %>
+    <ul class="list-group"><li class="alert list-group-item list-group-item-danger"><%= alert %></li></ul>
+<% end %>
+<%= render 'form', user: @user %>
+<div class="text-center">
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
+</div>

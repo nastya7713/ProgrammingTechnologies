@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  faculty: one
+  enrollee: one
+  grade: 1.5
+
+two:
+  faculty: two
+  enrollee: two
+  grade: 1.5

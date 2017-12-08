@@ -1,0 +1,40 @@
+<h2 class="text-center">Create user</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field text-center">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+    <div class="field text-center">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true %>
+    </div>
+    <div class="field text-center">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true %>
+    </div>
+    <div class="field text-center">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field text-center">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+<br>
+  <div class="actions text-center">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
+
+<% if current_user.try(:admin?)%>
+    <div class="text-center"><%= link_to "Back", admin_index_path %></div>
+<% else %>
+    <div class="text-center"><%= render "devise/shared/links" %></div>
+<% end %>

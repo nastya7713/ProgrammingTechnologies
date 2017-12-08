@@ -1,0 +1,49 @@
+<div class="text-center">
+  <% if params[:alert] %>
+      <ul class="list-group"><li class="alert list-group-item list-group-item-danger"><%= params[:alert] %></li></ul>
+  <% end %>
+  <% if @faculty_enrollees.empty?%>
+      <h3> <%= t('.no_enrollees')%></h3>
+  <% else %>
+      <h3><%= t('.choose_enrollees')%></h3>
+      <h4><%= t('.limit')%> <%= @limit%> </h4>
+      <%= form_tag(:action => 'form_list') do %>
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <th>№</th>
+                  <th><%= t('.full_name')%></th>
+                  <th><%= t('.average')%></th>
+                  <th><%= t('.choose')%></th>
+                </tr>
+            </thead>
+            <tbody>
+          <% @faculty_enrollees.each_with_index  do |enrollee, index|%>
+                <tr>
+                  <td> <%= index + 1%> </td>
+                  <td> <%= enrollee.user.first_name %> <%= enrollee.user.last_name%> </td>
+                  <td> <%= enrollee.grade %> </td>
+                  <% if (index + 1) > @limit %>
+                  <td> <%= check_box_tag 'enrollee_ids[]', enrollee.user.id %> </td>
+                  <% else %>
+                      <td> <%= check_box_tag 'enrollee_ids[]', enrollee.user.id, true %> </td>
+                  <% end %>
+                </tr>
+          <% end %>
+          </tbody>
+          </table>
+          <%= hidden_field_tag :faculty_id, params[:faculty_id] %>
+          <%= hidden_field_tag :faculty_limit, @limit %>
+          <input class="button-ok" value= <%= t(".form_list") %> type="submit"/>
+      <% end %>
+      <br>
+  <% end%>
+</div>
+<ul class="list-group">
+  <li class="list-group-item text-center"><%= link_to t(".back"), admin_index_path %></li>
+</ul>
+
+
+
+
+
